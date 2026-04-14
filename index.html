@@ -1,21 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Varsapura Wiki</title>
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="CSS/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <script src="/bundle/index.js"></script>
+    <!-- FIX: moved bundle before main script, both deferred so they don't block parsing
+         and execute in order after DOM is ready -->
+    <script src="/bundle/index.js" defer></script>
+    <script src="/JavaScript/index.js" defer></script>
 </head>
 <body class="bg">
     <div id="root">
         <canvas id="canvas"></canvas>
-        <h1>Varsapura Wiki is on Maintenance</h1>
-        <p id="loading">Loading...</p>
+        <!-- FIX: typo "Maitenance" → "Maintenance" -->
+        <h1>Varsapura Wiki is under Maintenance</h1>
+        <!-- FIX: #loading is hidden by default; JS removes it once ready -->
+        <p id="loading" aria-live="polite">Loading...</p>
     </div>
-    <script src="/JavaScript/index.js"></script>
 </body>
 </html>
